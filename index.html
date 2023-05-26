@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+		  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+		  crossorigin="anonymous" 
+		  referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="style.css"> 
+	<title>Number Converter</title>
+</head>
+
+<body>
+<script src="index.js"></script>
+
+<div class = "box">
+	<!--logo-->
+	<div class ="logo-box">
+		<a href ="index.html">
+			<img src="NAIZ.png" alt="logo" title="NAIZ website">
+		</a>
+	</div>
+	
+	<!--navigation-->
+	<nav> 
+		<div class="nav"><!--navigation link box-->
+			<ul>
+				<li><a href="index.html"><i class="fa fa-home"></i> Home </a></li>
+				<li><a href="about.html" ><i class="fa fa-info-circle"></i> About </a></li>
+			</ul>
+		</div>
+	</nav>
+	<!---Title-->
+	<h1><i class="fa-solid fa-calculator"></i> Number Converter</h1>	
+	
+	<div class="form-boxes">
+		<div class="title">
+			<h2 id="title">Binary to Decimal </h2>
+		</div>
+
+		<div class="box1">
+			<!--from-->
+			<div class="form-group">
+				<label for="input">From:</label>
+				<select id="input" onchange="change()" >
+					<option value="Binary" >Binary</option>
+					<option value="Decimal" >Decimal</option>
+					<option value="Hexadecimal" >Hexadecimal</option>
+				</select>
+				
+			</div>
+					
+			<div class="form-group">
+			<!--To-->
+				<label for="output" >To:</label>
+				<select id="output" onchange="change()">
+					<option value="Binary" >Binary</option>
+					<option value="Decimal" selected>Decimal</option>
+					<option value="Hexadecimal" >Hexadecimal</option>
+				</select>
+			</div>
+		</div>
+	
+		<!--Enter number-->
+		<div class="form-group">
+			<label for="num1" id = "changeLabel">Enter Binary Number:</label>
+			<input type ="text" id="number" step="any" required onkeyup="restrictInput(this)">
+		</div>
+		
+		<!--button-->
+		<div class="form-group-buttons">
+			<button type="button" title="Convert" class="btn success" onclick="convert()"><i class="fa-solid fa-equals"></i> Convert</button>
+			<button type="reset" title="Reset" class="btn second" onclick="reset()"><i class="fa fa-times"></i> Reset</button>
+			<button type="button" title="Swap" class="btn second" onclick="swap()"><i class="fa fa-exchange"></i> Swap</button>
+		</div>
+		
+		<!--OUTPUT-->
+		<h3>Output:</h3>
+		<!--Result decimal-->
+		<div class="form-group">
+			<label id="result1">Decimal number:</label>
+			<textarea id="resultTextarea1" rows="2" readonly></textarea>
+		</div>
+			
+		<!--Result hexadecimal-->
+		<div class="form-group">
+			<label id="result2">Hexadecimal number: </label>
+			<textarea id="resultTextarea2" rows="2" readonly></textarea>
+		</div>
+		
+		<!--Result binary-->
+		<div class="form-group">
+			<label id="result3">Binary number: </label>
+			<textarea id="resultTextarea3" rows="2" readonly></textarea>
+		</div>
+	</div>
+	
+	<!--copyright-->
+	<div class="footer-box">
+		<footer>
+			<div class="footer">
+				<p>Copyright &copy;2023 <span>NAIZ.</span> All rights reserved.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+</body>
+</html>
